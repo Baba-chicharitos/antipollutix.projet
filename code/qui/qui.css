@@ -1,0 +1,309 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.pop {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: auto;
+  width: 100vw;
+  background-color: #f5fbf5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+p {
+  text-align: center;
+}
+
+.titre {
+  width: 100vw;
+  height: 12vw;
+  display: flex;
+  align-items: end;
+  justify-content: start;
+}
+
+.titre h1 {
+  color: #46a758;
+}
+
+.checkbox {
+  position: absolute;
+  top: 5vw;
+  right: 2vw;
+  display: block;
+  height: 20px;
+  width: 9vw;
+  opacity: 0;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.hamburgerLines {
+  height: 20px;
+  width: 9vw;
+  position: absolute;
+  top: 5vw;
+  right: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburgerLines .line {
+  display: block;
+  background-color: #94ce9a;
+  width: 100%;
+}
+
+.hamburgerLines .line1 {
+  opacity: 1;
+  height: 3px;
+  transform-origin: top left;
+  transition: 0.5s ease-in-out;
+}
+
+.hamburgerLines .line2 {
+  height: 3px;
+  transform-origin: top left;
+  transition: transform 0.4s ease-in-out;
+}
+
+.menuPopup {
+  opacity: 0;
+  position: absolute;
+  top: 5vw;
+  right: 2vw;
+  height: 50vw;
+  width: 35vw;
+  background-color: #c2f0c2;
+  border-radius: 5%;
+  border: 5px solid #65ba74;
+  transition: 0.4s ease-in-out;
+}
+
+.menuPopup ul {
+  height: 100%;
+  width: 100%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.menuPopup ul li {
+  list-style: none;
+}
+
+.menuPopup li a {
+  text-decoration: none;
+  color: #2a7e3b;
+}
+
+input[type="checkbox"]:checked ~ .menuPopup {
+  opacity: 1;
+}
+
+input[type="checkbox"]:checked ~ .hamburgerLines .line1 {
+  opacity: 0;
+}
+
+.croix {
+  position: absolute;
+  top: 3%;
+  right: 5%;
+  scale: 150%;
+}
+
+.fa-x {
+  color: #2a7e3b;
+}
+
+.herobanner {
+  height: 30vh;
+  width: 100vw;
+  background-image: url(../../media/paysage.jpg);
+  background-size: cover, contain;
+  background-position: center, top;
+  background-repeat: no-repeat, no-repeat;
+  margin-top: 5vh;
+}
+
+.contentText {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+.quiText {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  border-bottom: 1px solid #94ce9a;
+  margin-top: 5vh;
+}
+
+.remove {
+  border-bottom: 0px solid;
+}
+
+.quiTitre {
+  width: 100vw;
+  height: 18%;
+  font-size: 22px;
+  color: #46a758;
+}
+
+.separator {
+  width: 10vw;
+  height: 1px;
+  background: #46a758;
+}
+
+.quiDesc {
+  width: 100%;
+  height: 82%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 7%;
+}
+
+.quiDesc p {
+  color: #2a7e3b;
+  font-size: 12px;
+}
+
+.footer {
+  width: 100vw;
+  margin-top: 10vh;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(10, 1fr);
+  text-align: center;
+  background-color: #114533;
+  color: white;
+  align-items: center;
+}
+
+.footer__rights {
+  font-size: 2.5vw;
+  grid-row: 4 / 5;
+  grid-column: 1 / 11;
+}
+
+.footer__socials {
+  display: flex;
+  justify-content: center;
+  grid-row: 3 / 4;
+  grid-column: 1 / 11;
+}
+
+.social {
+  text-decoration: none;
+  font-size: 3vw;
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 1vh 2vw;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.social:hover {
+  background-color: white;
+  color: #0d3b66;
+}
+
+.footer__contact {
+  font-size: 3vw;
+  text-decoration: none;
+  color: #ffe66d;
+  font-weight: bold;
+  grid-row: 2 / 3;
+  grid-column: 4 / 8;
+}
+
+.footer__contact:hover {
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 1400px) {
+  .titre {
+    height: 10vh;
+    font-size: 40px;
+  }
+
+  .hamburgerLines {
+    height: 50px;
+    top: 2vw;
+  }
+
+  .hamburgerLines .line1,
+  .hamburgerLines .line2 {
+    height: 10px;
+  }
+  .menuPopup {
+    top: 2vw;
+    height: 35vh;
+    width: 20vw;
+  }
+  .checkbox {
+    top: 2vw;
+    height: 50px;
+  }
+  .croix {
+    scale: 250%;
+    margin-top: 15px;
+  }
+  .menuPopup ul li a {
+    font-size: 25px;
+  }
+  .footer__rights {
+    font-size: 20px;
+  }
+
+  .social {
+    font-size: 20px;
+  }
+
+  .footer__contact {
+    font-size: 30px;
+  }
+
+  .quiTitre {
+    font-size: 50px;
+  }
+  .quiDesc p {
+    font-size: 30px;
+  }
+  .quiText {
+    height: 60vh;
+  }
+  .herobanner {
+    height: 50vh;
+  }
+}
